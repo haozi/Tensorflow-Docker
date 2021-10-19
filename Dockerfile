@@ -2,9 +2,9 @@ FROM haozhi/anaconda
 
 ARG NOTEBOOKS="/home/ubuntu/notebooks"
 USER ubuntu
-RUN sh ~/.upgrade_system.sh && \
-    echo 'DISABLE_AUTO_UPDATE="true"' >> ~/.zshrc && \
-    mkdir -p $NOTEBOOKS && sudo ln -s $NOTEBOOKS /notebooks
+RUN echo 'DISABLE_AUTO_UPDATE="true"' >> ~/.zshrc && \
+    mkdir -p $NOTEBOOKS && sudo ln -s $NOTEBOOKS /notebooks && \
+    sh ~/.upgrade_system.sh
 
 WORKDIR $NOTEBOOKS
 
